@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% for cate in cate_list %}
+    <p>-----一级列表-----</p>
+    <p>{{ cate.name }}</p>
+
+    {% for sub in cate.sub_list %}
+        <p>-----二级列表-----</p>
+        <p>{{ sub.name }}</p>
+        <p>-----三级列表-----</p>
+        {% for type in sub.type_list %}
+            <p>{{ type.name }}</p>
+        {% endfor %}
+        <p>---------------------------------------------------</p>
+    {% endfor %}
+
+{% endfor %}
+
+
+</body>
+</html>
